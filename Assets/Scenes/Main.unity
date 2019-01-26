@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 3
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 8b7456801a7007344bba11ad2969523f, type: 2}
+  m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.1492077, g: 0.21305712, b: 0.26379645, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -373,45 +373,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1575445138059311912}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
 --- !u!1 &1574372159 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3887554448057223429, guid: 783feeb747c7640499f1cab8be538d5e,
     type: 3}
   m_PrefabInstance: {fileID: 1575445138059311912}
   m_PrefabAsset: {fileID: 0}
-=======
---- !u!1 &1655220432
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1655220433}
-  m_Layer: 0
-  m_Name: Pillars
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1655220433
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655220432}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.7273464, y: 1.2388773, z: 9.966621}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
->>>>>>> fe29e82cdc1f89c2c0bed928c98c4e6025c18da0
 --- !u!1 &1781449917
 GameObject:
   m_ObjectHideFlags: 0
