@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    bool running = true;
     public GameObject testegg;
     List<GameObject> Pillars = new List<GameObject>();
 
@@ -27,12 +28,19 @@ public class Win : MonoBehaviour
             for(int i = 0; i < Pillars.Count(); i++){
                 Pillars[0].GetComponent<MeshRenderer>().material.color = Color.grey;
             }
+            if(running == true){
             StartCoroutine(spawnegg());
+            running = false;
+            }
         }
     }
     private IEnumerator spawnegg(){
+        
+            
         yield return new WaitForSeconds(5f);
         Vector3 spawnpos = new Vector3(0,2.5f,0);
         Instantiate(testegg, spawnpos, Quaternion.identity);
+        
+        
     }
 }
