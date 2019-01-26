@@ -5,8 +5,8 @@ using UnityEngine;
 public class BirdColour : MonoBehaviour
 {
     public GameObject[] feathers;
-    public GameObject[] tagable;
-    Material mat;
+    public GameObject[] tagables;
+  
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +16,18 @@ public class BirdColour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tagable = GameObject.FindGameObjectsWithTag("Pillar");
-        if(tagable.Length >= 1){
+        tagables = GameObject.FindGameObjectsWithTag("Pillar");
+        if(tagables.Length >= 1){
+            Color color = new Color(0, 0, 0);
+
+           foreach (var tagable in tagables)
+           {
+              color += tagable.GetComponent<MeshRenderer>().material.color;
+          }
+
+            color = color / tagables.Length;
             for(int i = 0; i < feathers.Length; i++){
-            feathers[i].GetComponent<SkinnedMeshRenderer>().material.color = tagable[0].GetComponent<MeshRenderer>().material.color;
+            feathers[i].GetComponent<SkinnedMeshRenderer>().material.color = color;
             }
         }
         
