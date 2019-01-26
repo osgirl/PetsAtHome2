@@ -274,7 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed952fcac374db488df7aa6645851d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  testegg: {fileID: 4179612095877278645, guid: 7cb2831882a3c8244991a67c91d493d1, type: 3}
+  testegg: {fileID: 5119239936434859183, guid: 0e402a52b7e02a94bb1ee2b46440bf54, type: 3}
 --- !u!1001 &281794441
 PrefabInstance:
   m_ObjectHideFlags: 0

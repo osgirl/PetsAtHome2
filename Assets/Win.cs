@@ -38,7 +38,7 @@ public class Win : MonoBehaviour
         
             
         yield return new WaitForSeconds(5f);
-        Vector3 spawnpos = new Vector3(0,2.5f,0);
+        Vector3 spawnpos = new Vector3(0,1.5f,0);
         Instantiate(testegg, spawnpos, Quaternion.identity);
         
         
