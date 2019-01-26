@@ -764,6 +764,8 @@ public class LibPdInstance : MonoBehaviour {
 			Debug.LogWarning(gameObject.name + "::SendBang(): Could not find " + receiver + " object.");
 	}
 
+
+
 	//--------------------------------------------------------------------------
 	/// Send a float to the named receive object.
 	[MethodImpl(MethodImplOptions.Synchronized)]
