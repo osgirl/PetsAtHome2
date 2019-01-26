@@ -1,4 +1,4 @@
-﻿// LibPdInstance.cs - Unity integration of libpd, supporting multiple instances.
+// LibPdInstance.cs - Unity integration of libpd, supporting multiple instances.
 // -----------------------------------------------------------------------------
 // Copyright (c) 2018 Niall Moody
 // 
@@ -613,12 +613,16 @@ public class LibPdInstance : MonoBehaviour {
 			{
 				//Create our bindings dictionary.
 				bindings = new Dictionary<string, IntPtr>();
-
+                string filePathTest=Application.dataPath +"/Resources/Data/StreamingAssets/PdAssets";
+                #if UNITY_EDITOR
+                filePathTest=Application.dataPath + patchDir;
+                #endif
 				// Open our patch.
-				patchPointer = libpd_openfile(patchName + ".pd", Application.dataPath + patchDir);
+				//patchPointer = libpd_openfile(patchName + ".pd", Application.dataPath + patchDir);
+                patchPointer = libpd_openfile("GameJamMain.pd",  filePathTest);
 				if(patchPointer == IntPtr.Zero)
 				{
-					Debug.LogError(gameObject.name + ": Could not open patch. Directory: " + (Application.dataPath + patchDir) + " Patch: " + patchName + ".pd");
+					Debug.LogError(gameObject.name + ": Could not open patch. Directory: " + (filePathTest) + " Patch: " + patchName + ".pd");
 					patchFail = true;
 				}
 
