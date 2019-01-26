@@ -38,23 +38,15 @@
 #X msg 342 242 1;
 #X obj 355 210 t b f;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array array-\$0R 100 float 3;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0;
-#X coords 0 1 100 -1 200 140 1 0 0;
+#X array array-\$0R 806400 float 2;
+#X coords 0 1 806400 -1 200 140 1 0 0;
 #X restore 647 405 graph;
 #X obj 258 604 tabread4~ array-\$0L;
 #X obj 267 625 tabread4~ array-\$0R;
 #X obj 267 787 outlet~;
 #N canvas 0 22 450 278 (subpatch) 0;
-#X array array-\$0L 100 float 3;
-#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0;
-#X coords 0 1 100 -1 200 140 1 0 0;
+#X array array-\$0L 806400 float 2;
+#X coords 0 1 806400 -1 200 140 1 0 0;
 #X restore 442 407 graph;
 #X obj 343 757 hip~ 5;
 #X obj 342 788 outlet~;
@@ -69,6 +61,8 @@
 #X obj 63 251 *;
 #X obj 459 28 pack s \$0;
 #X msg 435 56 read -resize \$1 array-\$2L array-\$2R;
+#X obj 346 421 r zonalReset;
+#X msg 354 448 0;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X connect 2 0 52 0;
@@ -135,3 +129,5 @@
 #X connect 53 0 16 0;
 #X connect 54 0 55 0;
 #X connect 55 0 13 0;
+#X connect 56 0 57 0;
+#X connect 57 0 14 1;
