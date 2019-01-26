@@ -32,7 +32,7 @@ public class ChangeColour : MonoBehaviour
         // Compare the two distances
         var dist = Vector2.Distance(playerPos, pos);
 
-        if (dist < close)
+        if (dist < close || tag == "Pillar")
         {
             //Set the main Color of the Material to red
             tag = "Pillar";
