@@ -14,9 +14,11 @@ public class HueAngleAudio : MonoBehaviour
     void Start()
     {
         if (bird == null)
-            bird = GameObject.Find("Bird");
+            bird = GameObject.Find("Cylinder");
         if (pdInstance == null)
             pdInstance = FindObjectOfType<LibPdInstance>();
+        if (origin == null)
+            origin = GameObject.Find("Bird").transform;
     }
 
     private void Update()

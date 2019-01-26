@@ -20,6 +20,8 @@ public class AudioDistance : MonoBehaviour
             bird = GameObject.Find("Bird");
         if (pdInstance == null)
             pdInstance = FindObjectOfType<LibPdInstance>();
+        if (origin == null)
+            origin = GameObject.Find("Cylinder").transform;
     }
 
     // Update is called once per frame
