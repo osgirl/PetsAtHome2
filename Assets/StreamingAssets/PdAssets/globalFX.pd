@@ -1,0 +1,14 @@
+#N canvas 786 152 450 300 10;
+#X obj 72 246 outlet~;
+#X obj 149 247 outlet~;
+#X obj 70 36 inlet~;
+#X obj 157 39 inlet~;
+#X obj 71 99 vfreeverb~alt;
+#X obj 149 177 tb_compressor~;
+#X obj 50 178 tb_compressor~;
+#X connect 2 0 4 0;
+#X connect 3 0 4 1;
+#X connect 4 0 6 0;
+#X connect 4 1 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 0 0;
