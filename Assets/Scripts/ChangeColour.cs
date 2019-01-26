@@ -26,7 +26,7 @@ public class ChangeColour : MonoBehaviour
         Vector2 playerPos = new Vector2(playerTrans.position.x, playerTrans.position.z);
 
         // Get Pillar Transform/Position
-        Transform trans = this.transform;
+        Transform trans = transform;
         Vector2 pos = new Vector2(trans.position.x, trans.position.z);
 
         // Compare the two distances
@@ -35,6 +35,7 @@ public class ChangeColour : MonoBehaviour
         if (dist < close)
         {
             //Set the main Color of the Material to red
+            tag = "Pillar";
             Rend.material.SetColor("_Color", Color.HSVToRGB((Mathf.Atan2(transform.position.x * invertFloat, transform.position.z * invertFloat) + Mathf.PI) / (2 * Mathf.PI), 1, 1));
         }
     }
