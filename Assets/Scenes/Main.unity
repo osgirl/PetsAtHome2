@@ -179,21 +179,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2759977315565807440, guid: 3150c95af0edc431e97e5f9cbe9ecdfb,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759977315565807440, guid: 3150c95af0edc431e97e5f9cbe9ecdfb,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2759977315565807440, guid: 3150c95af0edc431e97e5f9cbe9ecdfb,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3150c95af0edc431e97e5f9cbe9ecdfb, type: 3}
 --- !u!1 &145878159
@@ -208,6 +193,7 @@ GameObject:
   - component: {fileID: 145878161}
   - component: {fileID: 145878160}
   - component: {fileID: 145878163}
+  - component: {fileID: 145878164}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -287,6 +273,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1.0000001}
   m_Center: {x: 0.00000005960464, y: 0, z: -0.00000008940696}
+--- !u!114 &145878164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 145878159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cd103801c241664898e461126f62eee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &394167198
 GameObject:
   m_ObjectHideFlags: 0
