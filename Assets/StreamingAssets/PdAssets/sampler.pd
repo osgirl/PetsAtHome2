@@ -1,0 +1,134 @@
+#N canvas 844 253 325 525 12;
+#X obj -14 -51 cnv 15 300 500 empty empty empty 20 12 0 14 -33289 -66577
+0;
+#X obj 9 19 cnv 15 250 100 empty empty empty 20 12 0 14 -241291 -66577
+0;
+#X obj 36 53 hsl 195 15 0 1 0 0 grenze-links empty empty -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 36 82 hsl 195 15 0 1 0 0 grenze-rechts empty empty -2 -6 0 8
+-262144 -1 -1 0 1;
+#X obj 9 120 cnv 15 250 200 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 0 0 450 300 (subpatch) 0;
+#X array array1 62079 float 2;
+#X coords 0 1 62079 -1 200 140 1;
+#X restore 32 136 graph;
+#X obj 35 281 hsl 195 15 0 1 0 0 empty pos empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 9 321 cnv 15 250 100 empty empty empty 20 12 0 14 -260818 -66577
+0;
+#X obj 33 343 hsl 128 15 -2 2 0 0 geschw empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 32 392 hsl 128 15 0 2 0 0 amp empty empty -2 -6 0 8 -262144
+-1 -1 0 1;
+#X obj 9 -12 cnv 15 250 30 empty empty empty 20 12 0 14 -262144 -66577
+0;
+#X obj 23 -4 bng 22 250 50 0 load empty empty 0 -6 0 8 -258699 -1 -1
+;
+#X obj 49 -46 cnv 15 100 20 empty empty Sample-Player 20 12 1 14 -33289
+-262144 0;
+#X obj 183 426 cnv 15 100 20 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 371 0 663 778 subpatch 1;
+#X obj 211 93 soundfiler;
+#X obj 211 42 openpanel;
+#X obj 45 477 phasor~;
+#X floatatom 45 423 5 0 0 0 - - -, f 5;
+#X floatatom 305 648 5 0 0 0 - - -, f 5;
+#X obj 305 692 line~;
+#X msg 305 668 \$1 20;
+#X obj 45 766 hip~ 5;
+#X obj 45 448 *;
+#X obj 309 231 -;
+#X obj 364 190 t f b;
+#X floatatom 309 196 5 0 0 0 - - -, f 5;
+#X obj 45 343 *;
+#X obj 45 531 +~;
+#X obj 45 503 *~;
+#X obj 275 140 r grenze-rechts;
+#X obj 365 165 r grenze-links;
+#X obj 211 18 r load;
+#X obj 81 350 r geschw;
+#X text 424 813 www.pd-tutorial.com;
+#X text 426 786 Johannes Kreidler;
+#X obj 81 382 t b f;
+#X obj 45 587 *~;
+#X msg 58 220 44100;
+#X obj 69 247 /;
+#X obj 61 190 t b f;
+#X obj 122 290 /;
+#X msg 119 252 1;
+#X obj 132 220 t b f;
+#X obj 303 612 inlet;
+#X obj 44 741 *~ 1;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array-\$0R 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 424 415 graph;
+#X obj 35 614 tabread4~ array-\$0L;
+#X obj 44 635 tabread4~ array-\$0R;
+#X obj 44 797 outlet~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array array-\$0L 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 219 417 graph;
+#X msg 212 66 read -resize \$1 array-\$0L array-\$0R;
+#X obj 120 767 hip~ 5;
+#X obj 119 742 *~ 1;
+#X obj 119 798 outlet~;
+#X connect 0 0 22 1;
+#X connect 0 0 25 0;
+#X connect 1 0 36 0;
+#X connect 2 0 14 0;
+#X connect 3 0 8 0;
+#X connect 4 0 6 0;
+#X connect 5 0 30 1;
+#X connect 6 0 5 0;
+#X connect 7 0 34 0;
+#X connect 8 0 2 0;
+#X connect 9 0 14 1;
+#X connect 9 0 28 0;
+#X connect 10 0 9 1;
+#X connect 10 0 13 1;
+#X connect 10 1 11 0;
+#X connect 11 0 9 0;
+#X connect 12 0 3 0;
+#X connect 13 0 22 0;
+#X connect 14 0 13 0;
+#X connect 15 0 11 0;
+#X connect 16 0 10 0;
+#X connect 17 0 1 0;
+#X connect 18 0 21 0;
+#X connect 21 0 3 0;
+#X connect 21 1 8 1;
+#X connect 22 0 32 0;
+#X connect 22 0 33 0;
+#X connect 23 0 24 0;
+#X connect 24 0 12 1;
+#X connect 25 0 23 0;
+#X connect 25 1 24 1;
+#X connect 26 0 12 0;
+#X connect 27 0 26 0;
+#X connect 28 0 27 0;
+#X connect 28 1 26 1;
+#X connect 29 0 4 0;
+#X connect 30 0 7 0;
+#X connect 32 0 30 0;
+#X connect 33 0 38 0;
+#X connect 36 0 0 0;
+#X connect 37 0 39 0;
+#X connect 38 0 37 0;
+#X restore 187 426 pd subpatch;
+#X text 48 -7 first load sound file;
+#X text 31 33 left limit;
+#X text 145 100 right limit;
+#X text 29 322 playback speed;
+#X text 27 371 volume;
