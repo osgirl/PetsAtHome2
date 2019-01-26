@@ -10,15 +10,19 @@ public class Win : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Pillars = GameObject.FindGameObjectsWithTag("Pillar").ToList();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Pillars.Count() > 30)
-        {
+        Pillars = GameObject.FindGameObjectsWithTag("Pillar").ToList();
 
+        if (Pillars.Count() >= 1)
+        {
+            float time = gameObject.GetComponent<MeshRenderer>().material.GetFloat("_ScaleFloat");
+            time += 30f * Time.deltaTime;
+            gameObject.GetComponent<MeshRenderer>().material.SetFloat("_ScaleFloat", time);
         }
     }
 }
