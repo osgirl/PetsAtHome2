@@ -20,7 +20,7 @@ public class Win : MonoBehaviour
     {
         Pillars = GameObject.FindGameObjectsWithTag("Pillar").ToList();
 
-        if (Pillars.Count() >= 2)
+        if (Pillars.Count() >= 10)
         {
             float time = gameObject.GetComponent<MeshRenderer>().material.GetFloat("_ScaleFloat");
             time += 30f * Time.deltaTime;
