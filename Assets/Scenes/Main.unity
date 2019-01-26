@@ -233,6 +233,8 @@ MonoBehaviour:
   speed: 0.25
   rotateSpeed: 2
   stepSpeed: 10
+  invertFloat: 1
+  scaleValue: 200
   cameraSocket: {fileID: 0}
   focusCarousel: {fileID: 401836427}
   birdSocket: {fileID: 1050019608}
@@ -10697,6 +10699,36 @@ PrefabInstance:
       propertyPath: stepSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1575445138199053443, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: invertFloat
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138199053443, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: scaleValue
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138392545182, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491011, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: field of view
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 1575445139801922983, guid: 783feeb747c7640499f1cab8be538d5e,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -10711,26 +10743,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138392545182, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491011, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: field of view
-      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783feeb747c7640499f1cab8be538d5e, type: 3}
