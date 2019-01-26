@@ -26,6 +26,11 @@ public class Win : MonoBehaviour
             for(int i = 0; i < Pillars.Count(); i++){
                 Pillars[0].GetComponent<MeshRenderer>().material.color = Color.grey;
             }
+            StartCoroutine(spawnegg());
         }
+    }
+    private IEnumerator spawnegg(){
+        yield return new WaitForSeconds(5f);
+
     }
 }
