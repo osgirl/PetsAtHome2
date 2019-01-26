@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    public GameObject testegg;
     List<GameObject> Pillars = new List<GameObject>();
 
     // Start is called before the first frame update
@@ -31,6 +32,7 @@ public class Win : MonoBehaviour
     }
     private IEnumerator spawnegg(){
         yield return new WaitForSeconds(5f);
-
+        Vector3 spawnpos = new Vector3(0,2.5f,0);
+        Instantiate(testegg, spawnpos, Quaternion.identity);
     }
 }
