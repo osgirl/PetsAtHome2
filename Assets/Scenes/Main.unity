@@ -699,5 +699,15 @@ PrefabInstance:
       propertyPath: field of view
       value: 80
       objectReference: {fileID: 0}
+    - target: {fileID: 1575445138840370224, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223186942150001017, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 783feeb747c7640499f1cab8be538d5e, type: 3}
