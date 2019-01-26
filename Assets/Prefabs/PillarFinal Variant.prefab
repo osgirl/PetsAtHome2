@@ -38,7 +38,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100002, guid: fe08fd4c4fe5544418c178c85fdb6d43, type: 3}
       propertyPath: m_Name
-      value: PillarFinal
+      value: PillarFinal Variant
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: fe08fd4c4fe5544418c178c85fdb6d43, type: 3}
       propertyPath: m_LocalPosition.x
