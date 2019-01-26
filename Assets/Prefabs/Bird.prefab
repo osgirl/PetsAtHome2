@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3048170459432771809
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1935433466883293394}
+  m_Layer: 0
+  m_Name: Bird Socket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1935433466883293394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3048170459432771809}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.5999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 3887554448005315232}
+  m_Father: {fileID: 3887554447521059877}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3887554446452319854
 GameObject:
   m_ObjectHideFlags: 0
@@ -7533,9 +7564,9 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3887554448422941747}
-  - {fileID: 3887554448005315232}
   - {fileID: 3887554447163237136}
   - {fileID: 5258378767298723863}
+  - {fileID: 1935433466883293394}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7555,10 +7586,12 @@ MonoBehaviour:
   direction: {x: 0, y: 0, z: 0}
   speed: 0.25
   rotateSpeed: 2
-  stepSpeed: 10
+  stepSpeed: 40
+  invertFloat: 0
+  scaleValue: 0
   cameraSocket: {fileID: 0}
   focusCarousel: {fileID: 3887554448422941747}
-  birdSocket: {fileID: 3887554448005315232}
+  birdSocket: {fileID: 1935433466883293394}
   testMode: 0
 --- !u!143 &3887554448057223430
 CharacterController:
@@ -8831,8 +8864,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3887554448359726895}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.5999999, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3887554447144254630}
@@ -8874,8 +8907,8 @@ Transform:
   - {fileID: 3887554447858702009}
   - {fileID: 3887554446695096142}
   - {fileID: 3887554447496070288}
-  m_Father: {fileID: 3887554447521059877}
-  m_RootOrder: 1
+  m_Father: {fileID: 1935433466883293394}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &3887554448359726880
 Animator:
@@ -9380,7 +9413,7 @@ PrefabInstance:
     - target: {fileID: 9010257600490389687, guid: 55dd47e9f7e1c4137a9b49b53f9c5859,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9010257600490389687, guid: 55dd47e9f7e1c4137a9b49b53f9c5859,
         type: 3}
@@ -9455,7 +9488,7 @@ PrefabInstance:
     - target: {fileID: 9010257600490389687, guid: 55dd47e9f7e1c4137a9b49b53f9c5859,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9010257600490389687, guid: 55dd47e9f7e1c4137a9b49b53f9c5859,
         type: 3}
