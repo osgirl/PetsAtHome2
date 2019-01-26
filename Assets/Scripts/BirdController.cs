@@ -9,10 +9,10 @@ public class BirdController : MonoBehaviour
     [SerializeField]
     private Vector3 movement, direction;
     [SerializeField]
-    private float speed, rotateSpeed;
+    private float speed, rotateSpeed, stepSpeed;
     private Action execution;
     [SerializeField]
-    private Transform cameraSocket, focusCarousel;
+    private Transform cameraSocket, focusCarousel, birdSocket;
     Camera camera;
     [SerializeField]
     private bool testMode;
@@ -26,6 +26,7 @@ public class BirdController : MonoBehaviour
 		direction = new Vector3(Input.GetAxis("Mouse X"),0, Input.GetAxis("Mouse Y"));
 		transform.Rotate(0, movement.z - direction.z, 0);
 		characterController.Move(transform.TransformDirection(Vector3.forward) * (movement.z + direction.z + 2.5f) * speed);
-
+		//birdSocket.rotation = Quaternion.RotateTowards(birdSocket.rotation,Quaternion.Euler((movement.z + direction.z)*22.5f,0, (movement.z - direction.z)*22.5f),Time.deltaTime * stepSpeed);
+		birdSocket.localRotation = Quaternion.Euler((movement.z + direction.z)*22.5f,0, (movement.z - direction.z)*-22.5f);
     }
 }

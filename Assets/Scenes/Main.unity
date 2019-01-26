@@ -259,6 +259,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1050019608 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1575445138840370224, guid: 783feeb747c7640499f1cab8be538d5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575445138059311912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1149098672
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,6 +653,16 @@ PrefabInstance:
         type: 3}
       propertyPath: speed
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138199053443, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: birdSocket
+      value: 
+      objectReference: {fileID: 1050019608}
+    - target: {fileID: 1575445138199053443, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: stepSpeed
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1575445138392545182, guid: 783feeb747c7640499f1cab8be538d5e,
         type: 3}
