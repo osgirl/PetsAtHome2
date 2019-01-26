@@ -17,6 +17,6 @@ public class Win : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        int count = Pillars.Where(x => x.)   
+        
     }
 }
