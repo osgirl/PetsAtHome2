@@ -22,6 +22,7 @@ public class BirdController : MonoBehaviour
     }
     void Update()
     {
+		camera.backgroundColor = Color.HSVToRGB((Mathf.Atan2(transform.position.x * invertFloat, transform.position.z * invertFloat) + Mathf.PI)/(2*Mathf.PI),Vector3.Distance(Vector3.zero,transform.position)/scaleValue,1)
 		movement = new Vector3(Input.GetAxis("Horizontal"),0,Input.GetAxis("Vertical"));
 		direction = new Vector3(Input.GetAxis("Mouse X"),0, Input.GetAxis("Mouse Y"));
 		transform.Rotate(0, movement.z - direction.z, 0);
