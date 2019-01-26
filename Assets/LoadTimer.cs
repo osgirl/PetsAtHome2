@@ -16,6 +16,7 @@ public class LoadTimer : MonoBehaviour
     void Update()
     {
         score = PlayerPrefs.GetFloat("timescore");
+        score = Mathf.RoundToInt(score);
         scoretext.text = score.ToString();
     }
 }
