@@ -2,16 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioDistance : MonoBehaviour
+public class HueAngleAudio : MonoBehaviour
 {
     public GameObject bird;
     public LibPdInstance pdInstance;
     public Transform origin;
 
-    public float maxDistance = 100;
-
-    public float distance;
-    public float distanceValue;
+    public float angleVal;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +19,11 @@ public class AudioDistance : MonoBehaviour
             pdInstance = FindObjectOfType<LibPdInstance>();
     }
 
-    // Update is called once per frame
-    public void Update()
+    private void Update()
     {
-        distance = Vector3.Distance(origin.position, bird.transform.position);
-        distanceValue = Mathf.InverseLerp(0, maxDistance, distance);
-        pdInstance.SendFloat("distance", distanceValue);
+        var direction = transform.InverseTransformDirection((origin.position - bird.transform.position).normalized);
+        var azimuth = ((Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg) + 180.0f) / 360.0f;
+        angleVal = azimuth;
+        pdInstance.SendFloat("hueAngle", angleVal);
     }
 }
