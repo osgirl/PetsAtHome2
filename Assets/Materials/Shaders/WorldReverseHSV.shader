@@ -4,7 +4,7 @@
     {
         _Color ("Color", Color) = (1,1,1,1)
         _MainTex ("Albedo (RGB)", 2D) = "white" {}
-        _ScaleFloat ("ScaleFloat", Range(0,256)) = 0.0
+        _ScaleFloat ("ScaleFloat", Range(0,2048)) = 0.0
     }
     SubShader
     {
