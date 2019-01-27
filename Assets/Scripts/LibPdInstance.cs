@@ -546,13 +546,14 @@ public class LibPdInstance : MonoBehaviour {
             // Try and add the patch directory to libpd's search path for
             // loading externals (still can't seem to load externals when
             // running in Unity though).
+            /*  //Miles trying to make it work on Windows
             if (patchDir != String.Empty)
             {
                 var dir = System.IO.Path.Combine(Application.streamingAssetsPath, "PdAssets");
                 Debug.Log("Adding" + dir); 
                 libpd_add_to_search_path(dir);
             }
-
+             */
 			// Make sure our static pipePrintToConsole variable is set
 			// correctly.
 			pipePrintToConsoleStatic = pipePrintToConsole;
