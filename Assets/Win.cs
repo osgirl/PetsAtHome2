@@ -36,6 +36,7 @@ public class Win : MonoBehaviour
             running = false;
             }
         }
+
     }
     private IEnumerator spawnegg(){
         
@@ -43,7 +44,8 @@ public class Win : MonoBehaviour
         yield return new WaitForSeconds(5f);
         Vector3 spawnpos = new Vector3(0,1.5f,0);
         Instantiate(testegg, spawnpos, Quaternion.identity);
-        
+        float number = PlayerPrefs.GetFloat("Played");
+        PlayerPrefs.SetFloat("Played", number + 1f); 
         
     }
 }
