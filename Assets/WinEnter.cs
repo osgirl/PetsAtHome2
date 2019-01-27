@@ -15,7 +15,9 @@ public class WinEnter : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(){
+    void OnTriggerEnter(Collider other){
+        if(other.gameObject.tag == "Egg"){
         SceneManager.LoadScene("EndScreen");
+        }
     }
 }
