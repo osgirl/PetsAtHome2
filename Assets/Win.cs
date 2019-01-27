@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    public GameObject amountofpillarsgameobject;
+    int pillarsneeded = 0;
     bool running = true;
     public GameObject testegg;
     List<GameObject> Pillars = new List<GameObject>();
@@ -12,7 +14,8 @@ public class Win : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        amountofpillarsgameobject = GameObject.Find("AmountOfPillarsNeeded");
+        pillarsneeded = amountofpillarsgameobject.GetComponent<PillarsPublicAmountNeeded>().pillarsneededtowin;
     }
 
     // Update is called once per frame
@@ -20,7 +23,7 @@ public class Win : MonoBehaviour
     {
         Pillars = GameObject.FindGameObjectsWithTag("Pillar").ToList();
 
-        if (Pillars.Count() >= 10)
+        if (Pillars.Count() >= pillarsneeded)
         {
             float time = gameObject.GetComponent<MeshRenderer>().material.GetFloat("_ScaleFloat");
             time += 30f * Time.deltaTime;
