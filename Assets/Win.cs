@@ -48,7 +48,7 @@ public class Win : MonoBehaviour
     private IEnumerator spawnegg(){
         
             
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(8f);
         Vector3 spawnpos = new Vector3(0,1.5f,0);
         GameObject egg = Instantiate(testegg, spawnpos, Quaternion.identity);
         egg.GetComponent<MeshRenderer>().material.color = colorforbird;
