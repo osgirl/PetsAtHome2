@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 0}
-  pdInstance: {fileID: 0}
+  pdInstance: {fileID: 5378127996318193778}
   origin: {fileID: 0}
   maxDistance: 300
   distance: 0
@@ -239,6 +239,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bird: {fileID: 0}
-  pdInstance: {fileID: 0}
+  pdInstance: {fileID: 5378127996318193778}
   origin: {fileID: 0}
   angleVal: 0

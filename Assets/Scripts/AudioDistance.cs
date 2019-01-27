@@ -16,17 +16,21 @@ public class AudioDistance : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (bird == null)
-            bird = GameObject.Find("Bird");
         if (pdInstance == null)
             pdInstance = FindObjectOfType<LibPdInstance>();
-        if (origin == null)
-            origin = GameObject.Find("Cylinder").transform;
     }
 
     // Update is called once per frame
     public void Update()
     {
+        if (bird == null)
+            bird = GameObject.Find("Bird");
+        if (origin == null)
+            origin = GameObject.Find("Cylinder").transform;
+
+        if (bird == null || origin == null)
+            return;
+
         distance = Vector3.Distance(origin.position, bird.transform.position);
         distanceValue = Mathf.InverseLerp(0, maxDistance, distance);
         pdInstance.SendFloat("distance", distanceValue);
