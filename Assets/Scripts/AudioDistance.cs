@@ -26,7 +26,11 @@ public class AudioDistance : MonoBehaviour
         if (bird == null)
             bird = GameObject.Find("Bird");
         if (origin == null)
-            origin = GameObject.Find("Cylinder").transform;
+        {
+            var go = GameObject.Find("Cylinder");
+            if (go != null)
+                origin = go.transform;
+        }
 
         if (bird == null || origin == null)
             return;
