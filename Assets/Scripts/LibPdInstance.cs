@@ -543,11 +543,15 @@ public class LibPdInstance : MonoBehaviour {
 			}
 			pdInitialised = true;
 
-			// Try and add the patch directory to libpd's search path for
-			// loading externals (still can't seem to load externals when
-			// running in Unity though).
-			if(patchDir != String.Empty)
-				libpd_add_to_search_path(Application.dataPath + patchDir);
+            // Try and add the patch directory to libpd's search path for
+            // loading externals (still can't seem to load externals when
+            // running in Unity though).
+            if (patchDir != String.Empty)
+            {
+                var dir = System.IO.Path.Combine(Application.streamingAssetsPath, "PdAssets");
+                Debug.Log("Adding" + dir); 
+                libpd_add_to_search_path(dir);
+            }
 
 			// Make sure our static pipePrintToConsole variable is set
 			// correctly.
@@ -612,17 +616,11 @@ public class LibPdInstance : MonoBehaviour {
 			else
 			{
 				//Create our bindings dictionary.
-				bindings = new Dictionary<string, IntPtr>();
-                string filePathTest=Application.dataPath +"/Resources/Data/StreamingAssets/PdAssets";
-                #if UNITY_EDITOR
-                filePathTest=Application.dataPath + patchDir;
-                #endif
-				// Open our patch.
-				//patchPointer = libpd_openfile(patchName + ".pd", Application.dataPath + patchDir);
-                patchPointer = libpd_openfile("GameJamMain.pd",  filePathTest);
+                var dir = System.IO.Path.Combine(Application.streamingAssetsPath, "PdAssets");
+                patchPointer = libpd_openfile(patchName + ".pd", dir);
 				if(patchPointer == IntPtr.Zero)
 				{
-					Debug.LogError(gameObject.name + ": Could not open patch. Directory: " + (filePathTest) + " Patch: " + patchName + ".pd");
+					Debug.LogError(gameObject.name + ": Could not open patch. Directory: " + (dir) + " Patch: " + patchName + ".pd");
 					patchFail = true;
 				}
 
