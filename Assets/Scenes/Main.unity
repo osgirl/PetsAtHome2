@@ -281,6 +281,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed952fcac374db488df7aa6645851d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosioneffect: {fileID: 9174533791099798018, guid: 94cd6b5bc691a9a4f977b848d057268f,
+    type: 3}
   amountofpillarsgameobject: {fileID: 0}
   testegg: {fileID: 5119239936434859183, guid: 0e402a52b7e02a94bb1ee2b46440bf54, type: 3}
 --- !u!114 &145878165
