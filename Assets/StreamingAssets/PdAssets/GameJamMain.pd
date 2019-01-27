@@ -176,7 +176,7 @@
 #X connect 56 0 0 0;
 #X restore 42 115 pd motif;
 #X obj 472 210 s metroSync;
-#X obj 283 56 r hueAngle;
+#X obj 284 19 r hueAngle;
 #X obj 521 71 loadbang;
 #X obj 283 146 *~;
 #X obj 312 147 *~;
@@ -327,7 +327,7 @@
 #X restore 28 324 pd intro;
 #X obj 535 232 r motifStart;
 #X msg 535 254 1;
-#N canvas 242 122 450 346 windSpeedSound 1;
+#N canvas 242 122 450 346 windSpeedSound 0;
 #X obj 111 81 noise~;
 #X obj 340 118 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
@@ -373,6 +373,8 @@
 #X obj 856 473 s motifLayer3;
 #X obj 937 456 s motifLayer4;
 #X obj 946 481 s motifLayer5;
+#X obj 302 61 * -1;
+#X obj 302 82 + 1;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 2 0 3 0;
@@ -386,7 +388,7 @@
 #X connect 9 1 15 0;
 #X connect 10 0 42 0;
 #X connect 10 1 43 0;
-#X connect 12 0 9 0;
+#X connect 12 0 71 0;
 #X connect 13 0 20 0;
 #X connect 14 0 1 0;
 #X connect 15 0 1 1;
@@ -440,3 +442,5 @@
 #X connect 61 0 60 0;
 #X connect 63 0 62 0;
 #X connect 65 0 64 0;
+#X connect 71 0 72 0;
+#X connect 72 0 9 0;
