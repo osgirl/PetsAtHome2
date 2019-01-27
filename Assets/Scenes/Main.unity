@@ -1666,7 +1666,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927f29ae830653845a2e0d0857287bf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pillarsneededtowin: 5
+  pillarsneededtowin: 20
 --- !u!4 &1387869865
 Transform:
   m_ObjectHideFlags: 0
@@ -2342,6 +2342,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1575445138059311912}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1902483270
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1902483269}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5, y: 1, z: 2.5}
+  m_Center: {x: 0, y: 0.74, z: 0}
 --- !u!114 &1902483272
 MonoBehaviour:
   m_ObjectHideFlags: 0
