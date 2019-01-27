@@ -188,9 +188,9 @@
 #X obj 774 205 s hueAngle;
 #X obj 703 205 s distance;
 #X obj 774 45 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 0 1;
 #X obj 704 45 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11700 1;
+-1 -1 0 1;
 #X obj 535 307 s motifLayer0;
 #X obj 621 306 s motifLayer1;
 #X obj 708 307 s motifLayer2;
@@ -222,7 +222,7 @@
 #X msg 1012 56 50;
 #X obj 677 14 loadbang;
 #X msg 745 34 0;
-#N canvas 208 185 879 358 intro 0;
+#N canvas 208 185 904 364 intro 0;
 #X obj 233 156 samplePlayer 12;
 #X obj 616 188 s 12-phasorReset;
 #X obj 616 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -271,6 +271,10 @@
 #X obj 812 105 del 30;
 #X msg 79 108 samples/wind_loop.wav;
 #X msg 240 118 samples/intro_motif.wav;
+#X obj 480 42 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 658 28 loadbang;
+#X msg 595 47 1;
 #X connect 0 0 20 0;
 #X connect 0 1 21 0;
 #X connect 2 0 1 0;
@@ -305,12 +309,14 @@
 #X connect 26 0 25 0;
 #X connect 27 0 3 0;
 #X connect 28 0 0 0;
+#X connect 29 0 7 0;
+#X connect 30 0 31 0;
+#X connect 31 0 7 0;
 #X restore 28 324 pd intro;
 #X obj 535 232 r motifStart;
 #X msg 535 254 1;
 #N canvas 242 122 450 346 windSpeedSound 0;
 #X obj 111 81 noise~;
-#X obj 124 282 dac~;
 #X obj 340 118 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X obj 120 184 bp~ 100 10;
@@ -326,24 +332,42 @@
 #X obj 41 120 osc~ 0.1;
 #X obj 256 7 r movementSpeed;
 #X obj 127 235 *~ 0.2;
-#X connect 0 0 10 0;
-#X connect 0 0 3 0;
-#X connect 2 0 14 1;
-#X connect 3 0 14 0;
-#X connect 4 0 5 0;
-#X connect 4 0 6 0;
-#X connect 5 0 3 1;
+#X obj 130 278 outlet~;
+#X connect 0 0 9 0;
+#X connect 0 0 2 0;
+#X connect 1 0 13 1;
+#X connect 2 0 13 0;
+#X connect 3 0 4 0;
+#X connect 3 0 5 0;
+#X connect 4 0 2 1;
+#X connect 5 0 6 0;
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
-#X connect 8 0 9 0;
-#X connect 9 0 3 2;
-#X connect 10 0 3 0;
-#X connect 11 0 10 1;
-#X connect 12 0 11 0;
-#X connect 13 0 4 0;
-#X connect 14 0 1 0;
-#X connect 14 0 1 1;
-#X restore 512 434 pd windSpeedSound;
+#X connect 8 0 2 2;
+#X connect 9 0 2 0;
+#X connect 10 0 9 1;
+#X connect 11 0 10 0;
+#X connect 12 0 3 0;
+#X connect 13 0 14 0;
+#X restore 472 395 pd windSpeedSound;
+#X obj 755 376 r pdReset;
+#X msg 756 409 0;
+#X obj 756 439 s motifLayer0;
+#X obj 673 437 s distance;
+#X obj 681 461 s hueAngle;
+#X obj 591 463 s zonalReset;
+#X obj 550 443 s introLoopToggle;
+#X msg 592 415 1;
+#X obj 645 394 s movementSpeed;
+#X msg 652 364 0.2;
+#X obj 459 477 s pdReset;
+#X obj 463 439 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 765 464 s motifLayer1;
+#X obj 847 448 s motifLayer2;
+#X obj 856 473 s motifLayer3;
+#X obj 937 456 s motifLayer4;
+#X obj 946 481 s motifLayer5;
 #X connect 1 0 0 0;
 #X connect 1 1 0 1;
 #X connect 2 0 3 0;
@@ -395,3 +419,20 @@
 #X connect 50 1 1 1;
 #X connect 51 0 52 0;
 #X connect 52 0 31 0;
+#X connect 53 0 1 0;
+#X connect 53 0 1 1;
+#X connect 54 0 55 0;
+#X connect 54 0 61 0;
+#X connect 54 0 63 0;
+#X connect 55 0 56 0;
+#X connect 55 0 57 0;
+#X connect 55 0 58 0;
+#X connect 55 0 59 0;
+#X connect 55 0 66 0;
+#X connect 55 0 67 0;
+#X connect 55 0 68 0;
+#X connect 55 0 69 0;
+#X connect 55 0 70 0;
+#X connect 61 0 60 0;
+#X connect 63 0 62 0;
+#X connect 65 0 64 0;
