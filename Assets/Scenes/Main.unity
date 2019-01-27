@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.14917548, g: 0.21306029, b: 0.26329997, a: 1}
+  m_IndirectSpecularColor: {r: 0.1492077, g: 0.21305712, b: 0.26379645, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -647,10 +647,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed952fcac374db488df7aa6645851d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playing: 1
+  Bird: {fileID: 1902483269}
   explosioneffect: {fileID: 9174533791099798018, guid: 94cd6b5bc691a9a4f977b848d057268f,
     type: 3}
   amountofpillarsgameobject: {fileID: 0}
-  testegg: {fileID: 5119239936434859183, guid: 0e402a52b7e02a94bb1ee2b46440bf54, type: 3}
+  testegg: {fileID: 874769073675050759, guid: accd2b56f8ee7554fa2b101ea37ebb5b, type: 3}
 --- !u!1001 &158490156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6065,6 +6067,8 @@ MonoBehaviour:
   - {fileID: 417849529}
   - {fileID: 949374750}
   tagables: []
+  color: {r: 0, g: 0, b: 0, a: 0}
+  winobject: {fileID: 145878159}
 --- !u!114 &1902483273
 MonoBehaviour:
   m_ObjectHideFlags: 0
