@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Win : MonoBehaviour
 {
+    public bool playing = true;
+    public GameObject Bird;
+    Color colorforbird;
     public GameObject explosioneffect;
     public GameObject amountofpillarsgameobject;
     int pillarsneeded = 0;
@@ -17,15 +20,18 @@ public class Win : MonoBehaviour
     {
         amountofpillarsgameobject = GameObject.Find("AmountOfPillarsNeeded");
         pillarsneeded = amountofpillarsgameobject.GetComponent<PillarsPublicAmountNeeded>().pillarsneededtowin;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+        colorforbird = Bird.GetComponent<BirdColour>().color;
         Pillars = GameObject.FindGameObjectsWithTag("Pillar").ToList();
 
         if (Pillars.Count() >= pillarsneeded)
         {
+            playing = false;
             float time = gameObject.GetComponent<MeshRenderer>().material.GetFloat("_ScaleFloat");
             time += 30f * Time.deltaTime;
             gameObject.GetComponent<MeshRenderer>().material.SetFloat("_ScaleFloat", time);
@@ -44,7 +50,8 @@ public class Win : MonoBehaviour
             
         yield return new WaitForSeconds(5f);
         Vector3 spawnpos = new Vector3(0,1.5f,0);
-        Instantiate(testegg, spawnpos, Quaternion.identity);
+        GameObject egg = Instantiate(testegg, spawnpos, Quaternion.identity);
+        egg.GetComponent<MeshRenderer>().material.color = colorforbird;
         Instantiate(explosioneffect, spawnpos, Quaternion.identity);
         float number = PlayerPrefs.GetFloat("Played");
         PlayerPrefs.SetFloat("Played", number + 1f); 
