@@ -5,8 +5,6 @@ using UnityEngine;
 public class HSV_ScaledSaturation : HSV_Base
 {
     private Renderer rend;
-    [SerializeField]
-    private float scaleValue = 256f;
     void Start(){
         rend = GetComponent<Renderer>();
     }
