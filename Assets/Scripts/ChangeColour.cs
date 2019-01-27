@@ -9,6 +9,8 @@ public class ChangeColour : MonoBehaviour
     public float close = 7.5f;
     private float invertFloat = -1f;
     private float scaleValue = 256f;
+    public ParticleSystem system;
+    bool doOnce = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,12 @@ public class ChangeColour : MonoBehaviour
         {
             //Set the main Color of the Material to red
             tag = "Pillar";
-            Rend.material.SetColor("_Color", Color.HSVToRGB((Mathf.Atan2(transform.position.x * invertFloat, transform.position.z * invertFloat) + Mathf.PI) / (2 * Mathf.PI), 1, 1));
+            var col = Color.HSVToRGB((Mathf.Atan2(transform.position.x * invertFloat, transform.position.z * invertFloat) + Mathf.PI) / (2 * Mathf.PI), 1, 1);
+            Rend.material.SetColor("_Color", col);
+
+            var main = system.main;
+            main.startColor = col;
+            system.Play();
         }
     }
 }
