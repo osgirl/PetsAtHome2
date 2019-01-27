@@ -652,10 +652,12 @@ public class LibPdInstance : MonoBehaviour {
 				libpd_set_printhook(printHook);
 			}
 
-			foreach(var ptr in bindings.Values)
-				libpd_unbind(ptr);
-			bindings.Clear();
-
+            if (bindings != null)
+            {
+                foreach (var ptr in bindings.Values)
+                    libpd_unbind(ptr);
+                bindings.Clear();
+            }
 			libpd_closefile(patchPointer);
 		}
 	}
