@@ -274,6 +274,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed952fcac374db488df7aa6645851d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosioneffect: {fileID: 9174533791099798018, guid: 94cd6b5bc691a9a4f977b848d057268f,
+    type: 3}
+  amountofpillarsgameobject: {fileID: 0}
   testegg: {fileID: 5119239936434859183, guid: 0e402a52b7e02a94bb1ee2b46440bf54, type: 3}
 --- !u!1001 &227799445
 PrefabInstance:
@@ -2034,26 +2037,6 @@ PrefabInstance:
       propertyPath: scaleValue
       value: 200
       objectReference: {fileID: 0}
-    - target: {fileID: 1575445138392545182, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491011, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: field of view
-      value: 80
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -15
-      objectReference: {fileID: 0}
-    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 1575445139801922983, guid: 783feeb747c7640499f1cab8be538d5e,
         type: 3}
       propertyPath: m_LocalRotation.x
@@ -2068,6 +2051,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138392545182, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -15
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491012, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1575445138614491011, guid: 783feeb747c7640499f1cab8be538d5e,
+        type: 3}
+      propertyPath: field of view
+      value: 80
       objectReference: {fileID: 0}
     - target: {fileID: 3887554448057223431, guid: 783feeb747c7640499f1cab8be538d5e,
         type: 3}
