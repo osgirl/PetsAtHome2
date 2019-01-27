@@ -9,7 +9,7 @@ public class BirdController : MonoBehaviour
     [SerializeField]
     private Vector3 leftJoystick, rightJoystick, keyboardMovement;
     [SerializeField]
-    private float speed, defaultSpeed, forwardFloat, rotate speed, rotationValue = 20f, turnSpeed;
+    private float speed, defaultSpeed, forwardFloat, rotateSpeed, rotationValue = 20f, turnSpeed;
     private Action execution;
     [SerializeField]
     private Transform cameraSocket, birdSocket;
