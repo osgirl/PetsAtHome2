@@ -18,7 +18,6 @@ public class AudioDistance : MonoBehaviour
     {
         if (pdInstance == null)
             pdInstance = FindObjectOfType<LibPdInstance>();
-		maxDistance = GlobalSettings.worldSize/2;
     }
 
     // Update is called once per frame
