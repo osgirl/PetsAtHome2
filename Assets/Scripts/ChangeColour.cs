@@ -7,7 +7,7 @@ public class ChangeColour : MonoBehaviour
     public GameObject Player;
     public MeshRenderer Rend;
     public float close = 7.5f;
-    private float invertFloat = -1f;
+    private float invertFloat = 1f;
     private float scaleValue = 256f;
 
     // Start is called before the first frame update
