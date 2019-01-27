@@ -9,13 +9,14 @@ public class BirdController : MonoBehaviour
     [SerializeField]
     private Vector3 leftJoystick, rightJoystick, keyboardMovement;
     [SerializeField]
-    private float speed, defaultSpeed, rotateSpeed, forwardFloat, invertFloat, scaleValue, rotationValue = 20f;
+    private float speed, defaultSpeed, forwardFloat, rotateSpeed, rotationValue = 20f, turnSpeed;
     private Action execution;
     [SerializeField]
     private Transform cameraSocket, birdSocket;
     private Camera camera;
     [SerializeField]
     private bool testMode;
+	public static float speedReference;
     void Start(){
         camera = Camera.main;
         characterController = GetComponent<CharacterController>();
@@ -28,15 +29,16 @@ public class BirdController : MonoBehaviour
 
 		forwardFloat = defaultSpeed;
 		if (keyboardMovement.magnitude > 0) {
-			transform.Rotate(0, keyboardMovement.x, 0);
+			transform.Rotate(0, keyboardMovement.x * turnSpeed, 0);
 			forwardFloat += keyboardMovement.z * speed * (1 - Mathf.Abs(keyboardMovement.x)/2);
 			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler(keyboardMovement.z*rotationValue,0, keyboardMovement.x *-rotationValue),Time.deltaTime * rotateSpeed);
 		} else {
-			transform.Rotate(0, (leftJoystick.z - rightJoystick.z) / 2f, 0);
+			transform.Rotate(0, (leftJoystick.z - rightJoystick.z) * turnSpeed / 2f, 0);
 			forwardFloat += (leftJoystick.z + rightJoystick.z) * speed / 2f;
 			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler((leftJoystick.z + rightJoystick.z)*rotationValue / 2f,0, (leftJoystick.z - rightJoystick.z) * -rotationValue /2f),Time.deltaTime * rotateSpeed);
 		}
 		characterController.Move(transform.TransformDirection(Vector3.forward) * forwardFloat);
+		speedReference = characterController.velocity.magnitude;
 
     }
 }

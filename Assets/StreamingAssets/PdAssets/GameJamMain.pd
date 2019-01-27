@@ -38,7 +38,7 @@
 #X floatatom 486 128 5 0 0 0 - - -, f 5;
 #X msg 521 128 4;
 #X obj 283 111 zonalPlayerMixer;
-#N canvas 0 0 1211 778 motif 1;
+#N canvas 0 0 1211 778 motif 0;
 #X obj 128 343 line~;
 #X obj 87 386 *~;
 #X obj 158 388 *~;
@@ -197,7 +197,7 @@
 #X obj 794 306 s motifLayer3;
 #X obj 886 306 s motifLayer4;
 #X obj 972 305 s motifLayer5;
-#X obj 535 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 535 272 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 621 271 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
@@ -222,7 +222,7 @@
 #X msg 1012 56 50;
 #X obj 677 14 loadbang;
 #X msg 745 34 0;
-#N canvas 193 106 904 364 intro 1;
+#N canvas 193 106 904 364 intro 0;
 #X obj 233 156 samplePlayer 12;
 #X obj 616 188 s 12-phasorReset;
 #X obj 616 163 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -327,7 +327,7 @@
 #X restore 28 324 pd intro;
 #X obj 535 232 r motifStart;
 #X msg 535 254 1;
-#N canvas 242 122 450 346 windSpeedSound 0;
+#N canvas 242 122 450 346 windSpeedSound 1;
 #X obj 111 81 noise~;
 #X obj 340 118 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
@@ -339,16 +339,12 @@
 #X obj 260 86 + 1;
 #X obj 262 120 * 20;
 #X obj 261 143 + 3;
-#X obj 47 183 *~;
-#X obj 63 150 +~ 1;
-#X obj 41 120 osc~ 0.1;
 #X obj 256 7 r movementSpeed;
-#X obj 127 235 *~ 0.2;
 #X obj 130 278 outlet~;
-#X connect 0 0 9 0;
+#X obj 127 235 *~ 0.2;
 #X connect 0 0 2 0;
-#X connect 1 0 13 1;
-#X connect 2 0 13 0;
+#X connect 1 0 11 1;
+#X connect 2 0 11 0;
 #X connect 3 0 4 0;
 #X connect 3 0 5 0;
 #X connect 4 0 2 1;
@@ -356,11 +352,8 @@
 #X connect 6 0 7 0;
 #X connect 7 0 8 0;
 #X connect 8 0 2 2;
-#X connect 9 0 2 0;
-#X connect 10 0 9 1;
+#X connect 9 0 3 0;
 #X connect 11 0 10 0;
-#X connect 12 0 3 0;
-#X connect 13 0 14 0;
 #X restore 472 395 pd windSpeedSound;
 #X obj 755 376 r pdReset;
 #X msg 756 409 0;
