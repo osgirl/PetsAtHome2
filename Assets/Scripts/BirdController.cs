@@ -16,6 +16,7 @@ public class BirdController : MonoBehaviour
     private Camera camera;
     [SerializeField]
     private bool testMode;
+	public static float speedReference;
     void Start(){
         camera = Camera.main;
         characterController = GetComponent<CharacterController>();
@@ -37,6 +38,7 @@ public class BirdController : MonoBehaviour
 			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler((leftJoystick.z + rightJoystick.z)*rotationValue / 2f,0, (leftJoystick.z - rightJoystick.z) * -rotationValue /2f),Time.deltaTime * rotateSpeed);
 		}
 		characterController.Move(transform.TransformDirection(Vector3.forward) * forwardFloat);
+		speedReference = characterController.velocity.magnitude;
 
     }
 }
