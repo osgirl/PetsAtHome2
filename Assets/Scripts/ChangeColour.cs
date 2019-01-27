@@ -10,7 +10,8 @@ public class ChangeColour : MonoBehaviour
     private float invertFloat = 1f;
     private float scaleValue = 256f;
     public ParticleSystem system;
-    bool doOnce = false;
+    public ParticleSystem stream;
+
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +45,10 @@ public class ChangeColour : MonoBehaviour
             var main = system.main;
             main.startColor = col;
             system.Play();
+
+            main = stream.main;
+            main.startColor = col;
+            stream.Play();
         }
     }
 }
