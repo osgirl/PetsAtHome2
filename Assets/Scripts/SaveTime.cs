@@ -15,6 +15,7 @@ public class SaveTime : MonoBehaviour
     void Update()
     {
         timescore += Time.deltaTime;
+        //Debug.Log(timescore.ToString());
         PlayerPrefs.SetFloat("timescore", timescore);
         PlayerPrefs.Save();
     }

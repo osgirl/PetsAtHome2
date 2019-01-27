@@ -29,7 +29,7 @@ public class Win : MonoBehaviour
             time += 30f * Time.deltaTime;
             gameObject.GetComponent<MeshRenderer>().material.SetFloat("_ScaleFloat", time);
             for(int i = 0; i < Pillars.Count(); i++){
-                Pillars[i].GetComponent<MeshRenderer>().material.color = Color.grey;
+                Pillars[i].GetComponent<MeshRenderer>().material.color = Color.white;
             }
             if(running == true){
             StartCoroutine(spawnegg());
