@@ -9,9 +9,9 @@ public class BirdController : MonoBehaviour
     [SerializeField]
     private Vector3 leftJoystick, rightJoystick, keyboardMovement;
     [SerializeField]
-    private float speed, defaultSpeed, forwardFloat, rotateSpeed, rotationValue = 20f, turnSpeed = 4f;
+    private float speed, defaultSpeed, forwardFloat, rotateSpeed, cameraRotateLerp, cameraTilt = -2f, rotationValue = 20f, turnSpeed = 4f;
     [SerializeField]
-    private Transform birdSocket;
+    private Transform birdSocket, cameraSocket;
 	public static float speedReference;
     void Start(){
         characterController = GetComponent<CharacterController>();
@@ -29,8 +29,10 @@ public class BirdController : MonoBehaviour
 		    rightJoystick = new Vector3(Input.GetAxis("Right Joystick X"),0, Input.GetAxis("Right Joystick Y"));
 			transform.Rotate(0, (leftJoystick.z - rightJoystick.z) * turnSpeed / 2f, 0);
 			forwardFloat += (leftJoystick.z + rightJoystick.z) * speed / 2f;
-			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler((leftJoystick.z + rightJoystick.z)*rotationValue / 2f,0, (leftJoystick.z - rightJoystick.z) * -rotationValue /2f),Time.deltaTime * rotateSpeed);
+			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler((leftJoystick.z + rightJoystick.z) * 0.2f * rotationValue / 2f,0, (leftJoystick.z - rightJoystick.z) * -rotationValue /2f),Time.deltaTime * rotateSpeed);
 		}
+
+        cameraSocket.localRotation = Quaternion.Lerp(cameraSocket.localRotation, Quaternion.Euler(birdSocket.localRotation.eulerAngles.x * cameraTilt,0,birdSocket.localRotation.eulerAngles.z), Time.deltaTime * cameraRotateLerp);
 		characterController.Move(transform.TransformDirection(Vector3.forward) * forwardFloat);
 		speedReference = characterController.velocity.magnitude;
 
