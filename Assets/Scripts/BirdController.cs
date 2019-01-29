@@ -31,7 +31,7 @@ public class BirdController : MonoBehaviour
 		if (keyboardMovement.magnitude > 0) {
 			transform.Rotate(0, keyboardMovement.x * turnSpeed, 0);
 			forwardFloat += keyboardMovement.z * speed * (1 - Mathf.Abs(keyboardMovement.x)/2);
-			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler(keyboardMovement.z*rotationValue,0, keyboardMovement.x *-rotationValue),Time.deltaTime * rotateSpeed);
+			birdSocket.localRotation = Quaternion.RotateTowards(birdSocket.localRotation,Quaternion.Euler((keyboardMovement.z*rotationValue)*0.2f,0, keyboardMovement.x *-rotationValue),Time.deltaTime * rotateSpeed);
 		} else {
 			transform.Rotate(0, (leftJoystick.z - rightJoystick.z) * turnSpeed / 2f, 0);
 			forwardFloat += (leftJoystick.z + rightJoystick.z) * speed / 2f;
